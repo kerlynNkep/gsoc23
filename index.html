@@ -6,7 +6,7 @@
             <meta name="description" content="GSoC final report">
 
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <link rel="stylesheet" href="/style">
+            <link rel="stylesheet" href="./style.css">
             <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 
         </head>
@@ -20,16 +20,15 @@
                         
                         <hgroup>
                             <h1 style="text-align:center;">Kerlyn Manyi's Google Summer Of Code Final Report</h1>
-                            <h2 style="text-align:center;">MIFOS X VULNERABILITY ASSESSMENT AND PENETRATION TESTING</h2>
+        
                         </hgroup>
         
                         <article>
                         
                                 <hgroup>
-                                    <h3>Organization</h3>
-                                    <h4>Mifos Initiative</h4>
-                                    <h3>Mentor</h3>
-                                    <h4>Godfrey Kutumela</h4>
+                                    <h2 style="text-align:center;">MIFOS X VULNERABILITY ASSESSMENT AND PENETRATION TESTING</h2><br/><br/>
+                                    <h4><b>Organization: </b>Mifos Initiative</h4>
+                                    <h4><b>Mentor: </b>Godfrey Kutumela</h4>
                                 </hgroup>
                                 <hgroup>
                                     <h3>Introduction</h3>
@@ -44,7 +43,7 @@
                                 <hgroup>
                                     <h3>The Project Goals </h3>
                                     <p>
-                                        The <b>main goal</b>of this project is to re-assuring the more Enterprise-y type Mifos clients that they can
+                                        The <b>main goal</b> of this project is to re-assuring the more Enterprise-y type Mifos clients that they can
                                         safely bet on Mifos X as an MFI platform.
                                         
                                         <ul>
@@ -62,6 +61,51 @@
                                             <li>Work with developers to provide patches for known vulnerabilities.</li>
                                         </ul> 
                                     </p>
+                                </hgroup>
+
+                                <hgroup>
+                                    <h3>Description of Work</h3>
+                                    <p>
+                                        The Penetration test engagement followed the following phase<br/>
+                                        <p class="center"><img style="width: 55%; height: 30%;" src="./images/penteststages.jpg" alt="pentest_stages" ></p><br/>
+                                        <dl>
+                                            <dt><b>Planning and Reconnaissance Phase</b></dt>
+                                            <dd>The planning phase involves defining the scope of the Pentest and performing asset inventory.
+                                                I identified all the organization's assets and ranked the in-scope assets. The we move to the Reconnaissance phase which helps in determining an organization’s information
+                                                on the Internet such as network architecture, operating systems, applications, and users. The goal is to gather as much data as possible to enable me plan an effective attack strategy.
+                                                <br/>
+                                                Reconnaissance can be categorized as either active or passive depending on what methods are used to gather information. Passive reconnaissance pulls information 
+                                                from resources that are already publicly available, whereas active reconnaissance involves directly interacting with the target system to gain information. Typically, both methods
+                                                are necessary to form a full picture of the target’s vulnerabilities.<br/><br/>
+                                             </dd>
+                                            <dt><b>Scanning phase</b></dt>
+                                            <dd>Once all the relevant data has been gathered in the reconnaissance phase, it’s time to move on to scanning. In this phase, 
+                                                I made use of various tools to identify open ports and services. Open ports are potential entry points for attackers as such
+                                                 penetration testers need to identify as many open ports as possible to be used in the next phase.<br/>
+
+                                                I also carried out vulnerability scanning in this phase and it is an automated process.However, there are 
+                                                drawbacks to only performing a scan without a manual penetration test, scanning can identify a potential threat but cannot determine the level at which hackers can gain access. 
+                                                So, after the analyzing the results of the vulnerability scanners, it is important to do a manual pentest to eliminate false positives.
+                                            </dd><br/>
+                                            <dt><b>Exploitation Phase (Gaining Access and Maintaining Access)</b></dt>
+                                            <dd>Once vulnerabilities have been identified and we now have an idea of the application’s security posture, it’s time for exploitation. In this phase, I attempted to access the target system and exploit 
+                                                the identified vulnerabilities using a couple of techniques.
+
+                                                This phase is the most delicate because accessing the target system requires bypassing security restrictions which may have been put in place. 
+                                                The goal of the pentester is to see exactly how far they can get into your environment, identify high-value targets, and avoid any detection.
+                                            </dd><br/>
+                                            <dt><b>Analysis and Reporting</b></dt>
+                                            <dd>
+                                                Once the exploitation phase is complete, we then prepare a report documenting the findings gotten during the engagement. The report generated in this 
+                                                final penetration testing phase is used to fix any vulnerabilities found in the system and improve the organization’s security posture.<br/>
+
+                                                Building a penetration testing report requires clearly documenting vulnerabilities and putting them into context so that the organization can remediate its security risks. 
+                                                Two reports are generated in this phase: the <strong>Detailed VAPT Report </strong> to be used by the developers to fix the vulnerabilites and the <strong>Executive Summary Report</strong> to be 
+                                                used by the high stakeholders to access the business impact<br/><br/>
+                                            </dd>
+                                        </dl>
+                                    </p>
+
                                 </hgroup>
         
                         </article>
