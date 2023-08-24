@@ -1,2 +1,2 @@
 # GSOC'23
-My GSOC Final Work Sumission
+My Google Summer of Code Final Work Summary
