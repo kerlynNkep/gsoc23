@@ -19,82 +19,121 @@
                     <section>
                         
                         <hgroup>
-                            <h1 style="text-align:center;"><b>Kerlyn Manyi's Google Summer Of Code Final Report</b></h1>
+                            <h1 style="text-align:center;"><b>Kerlyn Manyi's Google Summer Of Code Final Report Summary.</b></h1>
         
                         </hgroup>
         
                         <article>
                         
                                 <hgroup>
+                                   
                                     <h2 style="text-align:center;">MIFOS X VULNERABILITY ASSESSMENT AND PENETRATION TESTING</h2><br/><br/>
-                                    <h4><b>Organization:</b> Mifos Initiative</h4>
-                                    <h4><strong>Mentor: Godfrey Kutumela</strong></h4>
+                                    <h4>Organization:</h4>
+                                    <p>Mifos Initiative</p>
+                                    
                                 </hgroup>
                                 <hgroup>
-                                    <h3>Introduction</h3>
+                                    <h3>I. Introduction</h3>
                                     <p>
                                         The Google summer of code program has been one of the greatest experiences of my life.
-                                        During the summer I performed a vulnerability assessment and penetration testing engagement on the
-                                        Mifos X web application, and the Apache Fineract APIs, to identify vulnerabilities which can be
+                                        During the summer, I performed a vulnerability assessment and penetration testing engagement on the
+                                        Mifos X community application, web application, and the Apache Fineract APIs, to identify vulnerabilities which can be
                                         exploited by malicious hackers and help provide patches for these known vulnerabilities.
                                         <br />
                                     </p>
                                 </hgroup>
                                 <hgroup>
-                                    <h3>The Project Goals </h3>
+                                    <h3>II. The Project Goals </h3>
                                     <p>
                                         The <b>main goal</b> of this project is to re-assuring the more Enterprise-y type Mifos clients that they can
                                         safely bet on Mifos X as an MFI platform.
                                         
-                                        <ul>
+                                        <ol>
                                             <li>Do a detailed Information gathering while setting the scope of the penetration testing
                                                 engagement. Perform Inventory and ranking of in scope assets.</li>
-                                            <li>Setup Test environment</li>
-                                            <li>Carry out Dynamic application security testing usig Owaspzap and Wapiti</li>
+                                            <li>Setup Test environment.</li>
+                                            <li>Carry out Dynamic application security testing using Owaspzap and Wapiti.</li>
                                             <li>Generate and review OWASP Zap report and Waspiti report. At this point, examine the application’s security posture.</li>
                                             <li>Eliminate False Positives from ZAP result by manually Pentesting the Mifos X application looking out for OWASP top 10 and
                                                 CWE/SANS top 25 security vulnerabilities and the Fineract APIs looking out for OWASP API top 10 vulnerabilities.</li>
-                                            <li>Generate 2 reports: An executive summary report and a detailed VAPT report to help developers patch the gaps found in the course of the pentest.</li>
+                                            <li>Generate 2 reports:</li>
+                                                <ul>
+                                                    <li> An executive summary report. </li>
+                                                    <li>A detailed VAPT report to help developers patch the gaps found in the course of the pentest.</li>
+                                                </ul>
                                             <li>Generate a risk register to analyze and assess findings and its risks to the organization.</li>
-                                            <li>Carry out static application security testing using CodeQL</li>
-                                            <li>Document SAST process and result</li>
+                                            <li>Carry out static application security testing using CodeQL and analyze the results.</li>
+                                            <li>Document SAST process and result.</li>
                                             <li>Work with developers to provide patches for known vulnerabilities.</li>
-                                        </ul> 
+                                        </ol> 
                                     </p>
                                 </hgroup>
 
                                 <hgroup>
-                                    <h3>Description of Work</h3>
+                                    <h3>III. Description of Work</h3>
                                     <p>
-                                        The Penetration test engagement followed the following phase<br/>
+                                        The Penetration test engagement followed the following phases.<br/>
                                         <p class="center"><img style="width: 55%; height: 30%;" src="./images/penteststages.jpg" alt="pentest_stages" ></p><br/>
-                                        <dl>
-                                            <dt><b>Planning and Reconnaissance Phase</b></dt>
-                                            <dd>The planning phase involves defining the scope of the Pentest and performing asset inventory.
-                                                I identified all the organization's assets and ranked the in-scope assets. The we move to the Reconnaissance phase which helps in determining an organization’s information
+                                        <dl><ol>
+                                            <li><dt><b>Planning and Reconnaissance Phase</b></dt>
+                                            <dd>The planning phase involved defining the scope of the Pentest and performing asset inventory.
+                                                I identified all the organization's assets and ranked the in-scope assets. Then I moved to the Reconnaissance phase which helped in determining an organization’s information
                                                 on the Internet such as network architecture, operating systems, applications, and users. The goal is to gather as much data as possible to enable me plan an effective attack strategy.
                                                 <br/>
                                                 Reconnaissance can be categorized as either active or passive depending on what methods are used to gather information. Passive reconnaissance pulls information 
                                                 from resources that are already publicly available, whereas active reconnaissance involves directly interacting with the target system to gain information. Typically, both methods
-                                                are necessary to form a full picture of the target’s vulnerabilities.<br/><br/>
-                                             </dd>
-                                            <dt><b>Scanning phase</b></dt>
+                                                are necessary to form a full picture of the target’s vulnerabilities.
+                                                <br/>
+                                                    <ul>
+                                                    <li>I did my recon by carrying out a censys search, to search for certificates, open ports and services running on those ports. </li>
+                                                    <li>I also did web crawling, and google dorking.</li>
+                                                    <li>I did a wappalyzer search to see the technologies being used and also check if they had any known vulnerabilities.</li>
+                                                    <li>Made use of shodan to check for any disclosed CVEs in the software versions seen from above.</li>
+                                                    <li>In this phase, I also did a github reconnaissance and I made use of the tool Trivy to 
+                                                        search through commit messages to see if I could find any sensitive information which I did.</li>
+                                                    <li>I did a license audit on all the opensource components / dependencies.</li>
+                                                     <br/>
+                                                    </ul>
+                                            </dd></li>
+                                            <li><dt><b>Scanning phase</b></dt>
                                             <dd>Once all the relevant data has been gathered in the reconnaissance phase, it’s time to move on to scanning. In this phase, 
                                                 I made use of various tools to identify open ports and services. Open ports are potential entry points for attackers as such
                                                  penetration testers need to identify as many open ports as possible to be used in the next phase.<br/>
 
-                                                I also carried out vulnerability scanning in this phase and it is an automated process.However, there are 
+                                                I also carried out vulnerability scanning in this phase and it is an automated process. However, there are 
                                                 drawbacks to only performing a scan without a manual penetration test, scanning can identify a potential threat but cannot determine the level at which hackers can gain access. 
                                                 So, after the analyzing the results of the vulnerability scanners, it is important to do a manual pentest to eliminate false positives.
-                                            </dd><br/>
-                                            <dt><b>Exploitation Phase (Gaining Access and Maintaining Access)</b></dt>
+                                                <br/>A highlight of things done in this phase are:
+                                                    <ul>
+                                                        <li>Perform an Nmap Scan to confirm open ports, services and their versions.</li>
+                                                        <li>Did an sslscan to detect version of TLS being used. Lower versions of TLS allows man in the middle attacks.</li>
+                                                        <li>Performed a scan of the Docker images of our applications using Trivy to detect vulnerable components.</li>
+                                                        <li>Performed a vulnerability scan on the Mifos X community and web application and analyzed the results.</li>
+                                                        <li>Perform SAST scanning on Mifos web application and community application. I made use of CodeQL to scan for vulnerable code patterns.</li>
+                                                    </ul>
+                                            </dd></li><br/>
+                                           <li><dl><dt><b>Exploitation Phase (Gaining Access and Maintaining Access)</b></dt>
                                             <dd>Once vulnerabilities have been identified and we now have an idea of the application’s security posture, it’s time for exploitation. In this phase, I attempted to access the target system and exploit 
                                                 the identified vulnerabilities using a couple of techniques.
 
                                                 This phase is the most delicate because accessing the target system requires bypassing security restrictions which may have been put in place. 
                                                 The goal of the pentester is to see exactly how far they can get into your environment, identify high-value targets, and avoid any detection.
-                                            </dd><br/>
-                                            <dt><b>Analysis and Reporting</b></dt>
+                                                Some of the vulnerabilities discovered are listed below:
+                                                <ol>
+                                                    <li>Error-Based Sql Injection on multiple endpoints.</li>
+                                                    <li>Sensitive Data Exposure.</li>
+                                                    <li>Absence of a Lockout Mechanism on the Login Page.</li>
+                                                    <li>Insecure Direct Object References Vulnerability.</li>
+                                                    <li>Lack Of Resources and Rate Limit Vulnerability.</li>
+                                                    <li>Use of Vulnerable and Outdated Components.</li>
+                                                    <li>Business Logic Error.</li>
+                                                    <li>Clickjacking vulnerability.</li>
+                                                    <li>HSTS Header misconfiguration.</li>
+                                                    <li>Missing Security Headers.</li>
+                                                    <li>Absence of anti-CSRF Tokens.</li>
+                                                </ol>
+                                            </dd></li><br/>
+                                            <li><dt><b>Analysis and Reporting</b></dt>
                                             <dd>
                                                 Once the exploitation phase is complete, we then prepare a report documenting the findings gotten during the engagement. The report generated in this 
                                                 final penetration testing phase is used to fix any vulnerabilities found in the system and improve the organization’s security posture.<br/>
@@ -102,8 +141,8 @@
                                                 Building a penetration testing report requires clearly documenting vulnerabilities and putting them into context so that the organization can remediate its security risks. 
                                                 Two reports are generated in this phase: the <strong>Detailed VAPT Report </strong> to be used by the developers to fix the vulnerabilites and the <strong>Executive Summary Report</strong> to be 
                                                 used by the high stakeholders to access the business impact.<br/><br/>
-                                            </dd>
-                                        </dl>
+                                            </dd></li>
+                                        </ol></dl>
                                     </p>
                                 </hgroup>
 
@@ -166,29 +205,17 @@
                                         The Mifos community has always been welcoming and helpful. Their efforts towards improving the developer/user experience have provided a very conducive environment to contribute. 
                                         I am grateful and elated to be a part of it.
 
-                                        <h4>Contact info</h4>
-
-                                        <a target="_blank" href="https://www.linkedin.com/in/kerlyn-manyi-a80201123/">
-                                            <inline>
-                                                <i class="fa-brands fa-linkedin-in"></i> Kerlyn Manyi
-                                            </inline>
-                                        </a>
-
-                                        <br/>
-                                        <a target="_blank" href="https://github.com/kerlynNkep/">
-                                            <inline>
-                                                <i class="fa-brands fa-github"></i> Kerlyn Manyi
-                                            </inline>
-                                        </a>
-
-                                        <br/>
-                                        <a href="mailto:kerlynmanyi@gmail.com">
-                                            <inline>
-                                                <i class="fa fa-envelope" aria-hidden="true"></i> kerlynmanyi@gmail.com
-                                            </inline>
-                                        </a>
-                                    </p>
+                                        <h4>Contributor Information.</h4>
+                                        <a target="_blank" href="https://www.linkedin.com/in/kerlyn-manyi-a80201123/"><inline><i class="fa-brands fa-linkedin-in"></i> Kerlyn Manyi </inline></a><br/>
+                                        <a target="_blank" href="https://github.com/kerlynNkep/"><inline><i class="fa-brands fa-github"></i> Kerlyn Manyi</inline></a><br/>
+                                        <a href="mailto:kerlynmanyi@gmail.com"><inline><i class="fa fa-envelope" aria-hidden="true"></i> kerlynmanyi@gmail.com</inline></a><br/>
+                                
+                                        <h4>Mentor Information.</h4>
+                                        <a target="_blank" href="https://www.linkedin.com/in/godfreykutumela/"><inline><i class="fa-brands fa-linkedin-in"></i> Godfrey Kutumela</inline></a><br/>
+                                        <a target="_blank" href="https://github.com/godfreykutumela"><inline><i class="fa-brands fa-github"></i> Godfrey Kutumela</inline></a><br/>
+                                        <a href="mailto:godfrey@mifos.org"><inline><i class="fa fa-envelope" aria-hidden="true"></i> godfrey@mifos.org</inline></a><br/>
                                 </hgroup>
+                                
         
                         </article>
                         <footer>
