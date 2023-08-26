@@ -47,7 +47,7 @@
                                 <hgroup>
                                     <h3>II. The Project Goals </h3>
                                     <p>
-                                        The <b>main goal</b> of this project is to re-assuring the more Enterprise-y type Mifos clients that they can
+                                        The <b>main goal</b> of this project is to re-assure the more Enterprise-y type Mifos clients that, they can
                                         safely bet on Mifos X as an MFI platform.
                                         
                                         <ol>
@@ -55,7 +55,7 @@
                                                 engagement. Perform Inventory and ranking of in scope assets.</li>
                                             <li>Setup Test environment.</li>
                                             <li>Carry out Dynamic application security testing using Owaspzap and Wapiti.</li>
-                                            <li>Generate and review OWASP Zap report and Waspiti report. At this point, examine the application’s security posture.</li>
+                                            <li>Generate and review OWASP ZAP report and Waspiti report. At this point, examine the application’s security posture.</li>
                                             <li>Eliminate False Positives from ZAP result by manually Pentesting the Mifos X application looking out for OWASP top 10 and
                                                 CWE/SANS top 25 security vulnerabilities and the Fineract APIs looking out for OWASP API top 10 vulnerabilities.</li>
                                             <li>Generate 2 reports:</li>
@@ -80,7 +80,7 @@
                                             <li><dt><b>Planning and Reconnaissance Phase</b></dt>
                                             <dd>The planning phase involved defining the scope of the Pentest and performing asset inventory.
                                                 I identified all the organization's assets and ranked the in-scope assets. Then I moved to the Reconnaissance phase which helped in determining an organization’s information
-                                                on the Internet such as network architecture, operating systems, applications, and users. The goal is to gather as much data as possible to enable me plan an effective attack strategy.
+                                                on the Internet such as network architecture, operating systems, applications, and users. The goal was to gather as much data as possible to enable me plan an effective attack strategy.
                                                 <br/>
                                                 Reconnaissance can be categorized as either active or passive depending on what methods are used to gather information. Passive reconnaissance pulls information 
                                                 from resources that are already publicly available, whereas active reconnaissance involves directly interacting with the target system to gain information. Typically, both methods
@@ -107,11 +107,11 @@
                                                 So, after the analyzing the results of the vulnerability scanners, it is important to do a manual pentest to eliminate false positives.
                                                 <br/>A highlight of things done in this phase are:
                                                     <ul>
-                                                        <li>Perform an Nmap Scan to confirm open ports, services and their versions.</li>
+                                                        <li>Performed an Nmap Scan to confirm open ports, services and their versions.</li>
                                                         <li>Did an sslscan to detect version of TLS being used. Lower versions of TLS allows man in the middle attacks.</li>
                                                         <li>Performed a scan of the Docker images of our applications using Trivy to detect vulnerable components.</li>
                                                         <li>Performed a vulnerability scan on the Mifos X community and web application and analyzed the results.</li>
-                                                        <li>Perform SAST scanning on Mifos web application and community application. I made use of CodeQL to scan for vulnerable code patterns.</li>
+                                                        <li>Performed SAST scanning on Mifos web application and community application. I made use of CodeQL to scan for vulnerable code patterns.</li>
                                                     </ul>
                                             </dd></li><br/>
                                            <li><dl><dt><b>Exploitation Phase (Gaining Access and Maintaining Access)</b></dt>
