@@ -27,3 +27,11 @@
         .center {
             text-align: center;
         }
+
+        ul {
+            font-family:'Times New Roman';
+        }
+
+        ol {
+            font-family:'Times New Roman';
+        }
